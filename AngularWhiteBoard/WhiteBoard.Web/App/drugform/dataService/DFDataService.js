@@ -20,8 +20,10 @@
             return $http.get('http://localhost/WhiteBoard.API/api/whiteboard/GetDrugForms')
             .then(successCallBack, errorCallBack);
 
-            function successCallBack(data) {
-                console.log(data);
+            function successCallBack(result) {
+                var drugForms = result.data
+                console.log(drugForms);
+                return drugForms;
             }
 
             function errorCallBack(error) {

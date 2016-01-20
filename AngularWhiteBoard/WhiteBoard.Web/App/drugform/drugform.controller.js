@@ -11,16 +11,17 @@
         var vm = this;
         vm.title = 'Drug Form Title';
         
-        vm.test = 'test 1';
+        vm.drugFormList = [];
 
         activate();
 
         function activate() {
+            
             var promises = [DFDataService.getDrugFormData()];
             return $q.all(promises)
             .then(onFullfilled, onRejected);
-            function onFullfilled(data) {
-                 
+            function onFullfilled(drugForms) {
+                vm.drugFormList = drugForms[0];
             }
 
             function onRejected(error) {

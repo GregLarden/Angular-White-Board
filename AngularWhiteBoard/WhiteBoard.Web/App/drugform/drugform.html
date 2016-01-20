@@ -1,3 +1,18 @@
-﻿<div class="jumbotron text-center">
-    <h1>The Drug Form Page Title: {{df.title}}</h1>
-</div>
+﻿
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id {{df.drugFormList.length}}</th>
+            <th>Name</th>
+            <th>Selected</th>
+            <th>DisplayOrder</th>
+        </tr>
+    </thead>
+    <tr data-ng-repeat="drugForm in df.drugFormList">
+        <td>{{drugForm.Id}}</td>
+        <td>{{drugForm.Name}}</td>
+        <td>{{drugForm.Selected}}</td>
+        <td>{{drugForm.DisplayOrder}}</td>
+    </tr>
+</table>
+    
