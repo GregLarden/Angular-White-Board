@@ -16,7 +16,7 @@
                {
                    state: 'examples',
                    config: {
-                       url: '/examples',                 
+                       url: '/',                 
                        templateUrl: 'app/examples/examples.html',
                        controller: 'ExamplesController',
                        controllerAs: 'vm',                       
