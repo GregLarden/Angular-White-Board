@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\drugform\dataService\DFDataService.js" />
     <Content Include="App\helpers\router\router.module.js" />
     <Content Include="App\core\core.module.js" />
     <Content Include="App\helpers\router\routerHelperProvider.js" />
@@ -131,12 +132,15 @@
     <Content Include="App\app.module.js" />
     <Content Include="gruntfile.js" />
     <Content Include="index.html" />
+    <None Include="_references.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="scripts\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
