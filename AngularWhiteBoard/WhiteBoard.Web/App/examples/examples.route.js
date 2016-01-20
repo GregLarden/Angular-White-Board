@@ -16,13 +16,13 @@
                {
                    state: 'examples',
                    config: {
-                       url: '/',
+                       url: '/examples',
                        templateUrl: 'app/examples/examples.html',
                        controller: 'ExamplesController',
                        controllerAs: 'vm',                       
                        title: 'Examples',
                        settings: {
-                           nav:1
+                           nav:2
                        }
                    }
                }
