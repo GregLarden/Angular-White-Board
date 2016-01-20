@@ -25,7 +25,8 @@
                     'angular-route': 'angular-route',
                     'angular-ui-router': 'angular-ui-router/release',
                     'bootstrap': 'bootstrap/dist/css',
-                    'font-awesome': 'font-awesome/css'
+                    'font-awesome/css': 'font-awesome/css' 
+                    
                }  
             }
         },

@@ -1,18 +1,27 @@
-﻿
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Id {{df.drugFormList.length}}</th>
-            <th>Name</th>
-            <th>Selected</th>
-            <th>DisplayOrder</th>
+﻿<div class="well well-lg">
+    <div data-dc-lookup-dropdown
+         title="Drug Forms:"
+         items="df.drugFormList"
+         selected-item="vm.selectedDrugForm"
+         selected-items="vm.selectedDrugForms">
+    </div>
+</div>
+
+<div class="well well-lg">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id {{df.drugFormList.length}}</th>
+                <th>Name</th>
+                <th>Selected</th>
+                <th>DisplayOrder</th>
+            </tr>
+        </thead>
+        <tr data-ng-repeat="drugForm in df.drugFormList">
+            <td>{{drugForm.Id}}</td>
+            <td>{{drugForm.Name}}</td>
+            <td>{{drugForm.Selected}}</td>
+            <td>{{drugForm.DisplayOrder}}</td>
         </tr>
-    </thead>
-    <tr data-ng-repeat="drugForm in df.drugFormList">
-        <td>{{drugForm.Id}}</td>
-        <td>{{drugForm.Name}}</td>
-        <td>{{drugForm.Selected}}</td>
-        <td>{{drugForm.DisplayOrder}}</td>
-    </tr>
-</table>
-    
+    </table>
+</div>

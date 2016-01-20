@@ -1,0 +1,49 @@
+﻿<div class="table-responsive">
+    <table class="table table-condensed" style="width:95%;">
+        <tr>
+            <td style="border-bottom: none; border-top: none;padding: 0;">
+                <label class="default-label">{{title}}</label>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top: 0; padding-left: 0; padding-right: 2px; border-bottom: 0; border-top: 0;">
+                <div class="input-group">
+                    <select class="form-control look-up-drop-down"
+                            data-ng-options="(item.acronym !== undefined ? item.acronym : item.name) for item in items | orderBy:'displayOrder'"
+                            data-ng-model="selectedItem"
+                            data-ng-disabled="disableSelect"
+                            data-ng-change="onChange(item)"
+                            data-ng-init="selectedItem = items[0]"
+                            ng-disabled="isDisabled"></select>
+                    <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
+                        <button class=" btn btn-info blue-tooltip"
+                                data-ng-disabled="disableAddButton"
+                                data-ng-click="addSelectedItem()"
+                                ng-disabled="isDisabled">
+                            <span class=" fa fa-plus"></span>
+                        </button>
+                    </span>
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 94%; padding-left: 0; padding-right: 2px; border-bottom: 0; border-top: 0;">
+              
+                    <table class="table table-condensed">
+                        <tr ng-repeat="item in selectedItems | orderBy: 'displayOrder'" style="padding-left: 5px; padding-right: 0px;  ">
+                            <td>
+                                <span class="default-label-md">{{ (item.acronym !== undefined ? item.acronym : item.name) }}</span>
+                            </td>
+                            <td style="padding-left: 0px; padding-right: 0; ">
+                                <button class="btn btn-info pull-right" data-ng-click="removeSelectedItem(item)" 
+                                        ng-disabled="isDisabled"><span class="fa fa-minus"></span></button>
+                            </td>
+                        </tr>
+                    </table>
+              
+            </td>
+        </tr>
+    </table>
+</div>
+

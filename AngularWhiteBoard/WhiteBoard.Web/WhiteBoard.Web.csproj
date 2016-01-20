@@ -66,7 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\drugform\css\customTheme.css" />
     <Content Include="App\drugform\dataService\DFDataService.js" />
+    <Content Include="App\drugform\directives\dc-lookupDropDown.directive.html" />
+    <Content Include="App\drugform\directives\dc-lookupDropDown.directive.js" />
     <Content Include="App\helpers\router\router.module.js" />
     <Content Include="App\core\core.module.js" />
     <Content Include="App\helpers\router\routerHelperProvider.js" />
