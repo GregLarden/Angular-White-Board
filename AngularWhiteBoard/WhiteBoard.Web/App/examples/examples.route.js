@@ -16,23 +16,18 @@
                {
                    state: 'examples',
                    config: {
-                       url: '/',                 
+                       url: '/',
                        templateUrl: 'app/examples/examples.html',
                        controller: 'ExamplesController',
                        controllerAs: 'vm',                       
-                       title: 'Examples'
+                       title: 'Examples',
+                       settings: {
+                           nav:1
+                       }
                    }
                }
         ];
     }
-    //function config($stateProvider, $urlRouterProvider) {
-    //    $stateProvider.state('examples', {
-    //        url: '/examples',
-    //        templateUrl: 'app/examples/examples.html',
-    //        controller: 'ExamplesController',
-    //        controllerAs: 'vm'
-    //    });
-    //}
 })();
 
 

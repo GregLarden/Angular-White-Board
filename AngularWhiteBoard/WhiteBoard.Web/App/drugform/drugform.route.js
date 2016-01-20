@@ -19,7 +19,10 @@
                        templateUrl: 'app/drugform/drugform.html',
                        controller: 'DrugFormController',
                        controllerAs: 'df',
-                       title: 'Drug Form'
+                       title: 'Drug Form',
+                       settings: {
+                           nav: 2
+                       }
                    }
                }];
 

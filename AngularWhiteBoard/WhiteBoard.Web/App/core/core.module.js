@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('app.core', ['blocks.router','ui.router']);
+    angular.module('app.core', ['helpers.router', 'ui.router']);
 
 })();
