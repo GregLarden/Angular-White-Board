@@ -4,9 +4,6 @@
             <td class="look-up-drop-down-td">
                 <label class="default-label">{{title}}</label>
             </td>
-            <td class="look-up-drop-down-td">
-                <label class="look-up-drop-down-label">Actions</label>
-            </td>
         </tr>
         <tr>
             <td class="look-up-drop-down-td">
@@ -27,37 +24,36 @@
                         </button>
                     </span>
                 </div>
-            </td>
-            <td class="look-up-drop-down-td">
-                <div class="input-group">
-                    <select class="form-control look-up-drop-down"
-                            data-ng-options="(item.acronym !== undefined ? item.acronym : item.name) for item in items | orderBy:'displayOrder'"
-                            data-ng-model="selectedItem"
-                            data-ng-disabled="disableSelect"
-                            data-ng-change="onChange(item)"
-                            data-ng-init="selectedItem = items[0]"
-                            ng-disabled="isDisabled"></select>
-                    <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
-                        <button class=" btn btn-info blue-tooltip"
-                                data-ng-disabled="disableAddButton"
-                                data-ng-click="addSelectedItem()"
-                                ng-disabled="isDisabled">
-                            <span class=" fa fa-plus"></span>
-                        </button>
-                    </span>
-                </div>
-            </td>
+            </td>           
         </tr>
         <tr>
-            <td colspan="2" style="padding:0 !important;" >
-                    <table class="table table-condensed look-up-drop-down-selected-items">                  
+            <td style="padding:0 !important;" >
+                    <table class="table table-condensed ">                  
                         <tr ng-repeat="item in selectedItems | orderBy: 'displayOrder'" >
                             <td>
-                                <span class="selected-item-label">{{ (item.acronym !== undefined ? item.acronym : item.name) }} </span>
-                                <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
-                                <hr>
+                                <span class="selected-item-label">{{ (item.acronym !== undefined ? item.acronym : item.name) }} </span>                              
+                            </td>
+                            <td>
+                                <label class="look-up-drop-down-label">
+                                    Select Actions
+                                    <span class="fa fa-chevron-down" style="cursor: pointer;" ng-click="isCollapsed = !isCollapsed"></span>
+                                </label>                                
                                 <div uib-collapse="isCollapsed">
-                                    <div class="well well-lg">Some content</div>
+                                    <div style="width:50px !important;" class="panel-collapse">
+                                        <table class="table table-condensed ">
+                                            <tr ng-repeat="item in selectedItems | orderBy: 'displayOrder'">
+                                                <td>
+                                                    <span class="selected-item-label">{{ (item.acronym !== undefined ? item.acronym : item.name) }} </span>
+                                                </td>                                                
+                                                <td style="padding: 0 !important;">
+                                                    <button class="btn btn-info pull-right" data-ng-click="removeSelectedItem(item)"
+                                                            ng-disabled="isDisabled">
+                                                        <span class="fa fa-minus"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </td>
                             <td style="padding: 0 !important;">
