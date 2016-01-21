@@ -10,10 +10,27 @@
 
     function DFDataService($http) {
         var service = {
-            getDrugFormData: getDrugFormData
+            getDrugFormData: getDrugFormData,
+            getDrugFormActions:getDrugFormActions
+
         };
 
         return service;
+
+        function getDrugFormActions(){
+            return $http.get('http://localhost/WhiteBoard.API/api/whiteboard/GetDrugFormActions')
+            .then(successCallBack, errorCallBack);
+
+            function successCallBack(result) {
+                var actions = result.data
+                console.log(actions);
+                return actions;
+            }
+
+            function errorCallBack(error) {
+                console.log(error);
+            }
+        }
 
         function getDrugFormData() {
             

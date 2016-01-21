@@ -15,22 +15,30 @@
         vm.removeDrugForm = removeDrugForm;
         
         vm.drugFormList = [];
+        vm.actionsList = [];
         vm.selectedDrugForm = {};
         vm.selectedDrugForms = [];
         activate();
 
         function activate() {
-            
-            var promises = [DFDataService.getDrugFormData()];
-            return $q.all(promises)
-            .then(onFullfilled, onRejected);
-            function onFullfilled(drugForms) {
-                vm.drugFormList = drugForms[0];
-            }
+            return _getDrugForms()
+                .then(function () {
+                return _getDrugFormActions();
 
-            function onRejected(error) {
-                console.log(error);
-            }
+            })
+
+           // var promises = [_getDrugFormActions, _getDrugForms];
+            //return $q.all(promises);
+            //.then(onFullfilled, onRejected);
+
+            //function onFullfilled() {
+            //    console.log('Got Data Successfully!');
+            //}
+
+            //function onRejected(error) {
+            //    console.log(error);
+            //}
+
 
         }
 
@@ -63,6 +71,29 @@
         }
 
 
+        function _getDrugForms() {
+            return DFDataService.getDrugFormData()
+            .then(onFullfilled, onRejected);
+            function onFullfilled(drugForms) {
+                vm.drugFormList = drugForms;
+            }
+
+            function onRejected(error) {
+                console.log(error);
+            }
+        }
+
+        function _getDrugFormActions() {
+            return DFDataService.getDrugFormActions()
+            .then(onFullfilled, onRejected);
+            function onFullfilled(actions) {
+                vm.actionsList = actions;
+            }
+
+            function onRejected(error) {
+                console.log(error);
+            }
+        }
         
     }
 })();

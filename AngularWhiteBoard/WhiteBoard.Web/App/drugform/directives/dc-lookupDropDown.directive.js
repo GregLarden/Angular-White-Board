@@ -15,6 +15,7 @@
             , scope: {
                 "title": "@"
                 , "items": "="
+                , "actions": "="
                 , "selectedItem": "="
                 , "selectedItems": "="
                 , "addedItem": "&addedItem"
