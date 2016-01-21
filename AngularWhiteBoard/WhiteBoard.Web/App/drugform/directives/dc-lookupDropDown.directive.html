@@ -1,12 +1,34 @@
-﻿<div class="table-responsive">
-    <table class="table table-condensed" style="width:95%;">
+﻿<div class="table-responsive look-up-drop-down-width">
+    <table class="table table-condensed" >
         <tr>
-            <td style="border-bottom: none; border-top: none;padding: 0;">
+            <td class="look-up-drop-down-td">
                 <label class="default-label">{{title}}</label>
+            </td>
+            <td class="look-up-drop-down-td">
+                <label class="look-up-drop-down-label">Actions</label>
             </td>
         </tr>
         <tr>
-            <td style="padding-top: 0; padding-left: 0; padding-right: 2px; border-bottom: 0; border-top: 0;">
+            <td class="look-up-drop-down-td">
+                <div class="input-group">
+                    <select class="form-control look-up-drop-down"
+                            data-ng-options="(item.acronym !== undefined ? item.acronym : item.name) for item in items | orderBy:'displayOrder'"
+                            data-ng-model="selectedItem"
+                            data-ng-disabled="disableSelect"
+                            data-ng-change="onChange(item)"
+                            data-ng-init="selectedItem = items[0]"
+                            ng-disabled="isDisabled"></select>
+                    <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
+                        <button class="btn btn-info blue-tooltip"
+                                data-ng-disabled="disableAddButton"
+                                data-ng-click="addSelectedItem()"
+                                ng-disabled="isDisabled">
+                            <span class=" fa fa-plus"></span>
+                        </button>
+                    </span>
+                </div>
+            </td>
+            <td class="look-up-drop-down-td">
                 <div class="input-group">
                     <select class="form-control look-up-drop-down"
                             data-ng-options="(item.acronym !== undefined ? item.acronym : item.name) for item in items | orderBy:'displayOrder'"
@@ -23,25 +45,27 @@
                             <span class=" fa fa-plus"></span>
                         </button>
                     </span>
-                    
                 </div>
             </td>
         </tr>
         <tr>
-            <td style="width: 94%; padding-left: 0; padding-right: 2px; border-bottom: 0; border-top: 0;">
-              
-                    <table class="table table-condensed">
-                        <tr ng-repeat="item in selectedItems | orderBy: 'displayOrder'" style="padding-left: 5px; padding-right: 0px;  ">
+            <td colspan="2" style="padding:0 !important;" >
+                    <table class="table table-condensed look-up-drop-down-selected-items">                  
+                        <tr ng-repeat="item in selectedItems | orderBy: 'displayOrder'" >
                             <td>
-                                <span class="default-label-md">{{ (item.acronym !== undefined ? item.acronym : item.name) }}</span>
+                                <span class="selected-item-label">{{ (item.acronym !== undefined ? item.acronym : item.name) }} </span>
+                                <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
+                                <hr>
+                                <div uib-collapse="isCollapsed">
+                                    <div class="well well-lg">Some content</div>
+                                </div>
                             </td>
-                            <td style="padding-left: 0px; padding-right: 0; ">
+                            <td style="padding: 0 !important;">
                                 <button class="btn btn-info pull-right" data-ng-click="removeSelectedItem(item)" 
                                         ng-disabled="isDisabled"><span class="fa fa-minus"></span></button>
                             </td>
                         </tr>
                     </table>
-              
             </td>
         </tr>
     </table>

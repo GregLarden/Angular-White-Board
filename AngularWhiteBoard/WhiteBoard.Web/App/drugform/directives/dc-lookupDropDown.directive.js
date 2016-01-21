@@ -37,7 +37,7 @@
             $scope.onChange = onChange;
             $scope.disableAddButton = true;
             $scope.disableSelect = false;
-
+            $scope.isCollapsed = true;
             activate();
 
             function activate() { }

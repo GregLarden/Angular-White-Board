@@ -12,9 +12,7 @@
     /*font-weight: 400;*/
 }
 
-.look-up-drop-down {
-    width: 84% !important;
-}
+
 
 .input-group {
     position: initial;
@@ -1711,7 +1709,7 @@ a:hover .topnav-hover-color
 /*/*** custom checkboxes ***/
 
 
-.customCheckBox > span{
+/*.customCheckBox > span{
   font-family: FontAwesome;
   display: inline-block;
   vertical-align: middle;
@@ -1724,3 +1722,50 @@ a:hover .topnav-hover-color
     box-shadow: inset 0 1px 1px #8cd1f1 !important;
 }*/
 
+
+
+.look-up-drop-down-label {
+    vertical-align: middle;
+    padding-right: 5px;
+    padding-left:5px;
+    -webkit-font-smoothing: antialiased;
+     font-size: 14px !important;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    background: none;
+    color: #666 !important;
+}
+
+.look-up-drop-down-td {
+    padding-top: 0  !important; 
+    padding-left: 0  !important; 
+    padding-right: 2px  !important; 
+    border-bottom: 0  !important; 
+    border-top: 0  !important;
+}
+.look-up-drop-down-width {
+    width: 600px !important;
+}
+.look-up-drop-down {
+    width: 260px !important;
+}
+
+.look-up-drop-down-selected-items {
+    width: 595px !important;
+}
+
+
+.selected-item-label {
+    display: block;
+     min-height: 17px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+    padding-left: 5px !important;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px !important;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    background: none;
+    color: #666 !important;
+}

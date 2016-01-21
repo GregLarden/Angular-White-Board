@@ -10,9 +10,13 @@
     function DrugFormController($q,$scope,DFDataService) {
         var vm = this;
         vm.title = 'Drug Form Title';
+       
+        vm.addDrugForm = addDrugForm;
+        vm.removeDrugForm = removeDrugForm;
         
         vm.drugFormList = [];
-
+        vm.selectedDrugForm = {};
+        vm.selectedDrugForms = [];
         activate();
 
         function activate() {
@@ -28,6 +32,34 @@
                 console.log(error);
             }
 
+        }
+
+
+        function addDrugForm(selectedItem, entityTypeName) {
+            var foundIndex = -1;
+            
+
+            vm.drugFormList.forEach(function (i) {
+                if (i.id == selectedItem.id) {
+                    foundIndex = vm.drugFormList.indexOf(i);
+                }
+            }, foundIndex);
+
+           
+        };
+
+        function removeDrugForm(selectedItem, entityTypeName) {
+            var foundIndex = -1;
+            var drugFormToDelete;
+
+          
+
+            vm.drugFormList.forEach(function (i) {
+                if (i.id == selectedItem.id) {
+                    foundIndex = vm.drugFormList.indexOf(i);
+                    drugFormToDelete = vm.drugFormList.splice(foundIndex,i);                    
+                }
+            });
         }
 
 

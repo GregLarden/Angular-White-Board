@@ -81,12 +81,23 @@
     <Content Include="App\examples\examples.controller.js" />
     <Content Include="App\examples\examples.route.js" />
     <Content Include="App\examples\examples.html" />
+    <Content Include="App\Vendor\angular-animate\angular-animate.js" />
+    <Content Include="App\Vendor\angular-animate\angular-animate.min.js" />
+    <Content Include="App\Vendor\angular-animate\index.js" />
+    <Content Include="App\Vendor\angular-boostrap-ui\ui-bootstrap-custom-1.1.0-csp.css" />
+    <Content Include="App\Vendor\angular-boostrap-ui\ui-bootstrap-custom-1.1.0.js" />
+    <Content Include="App\Vendor\angular-boostrap-ui\ui-bootstrap-custom-1.1.0.min.js" />
+    <Content Include="App\Vendor\angular-boostrap-ui\ui-bootstrap-custom-tpls-1.1.0.js" />
+    <Content Include="App\Vendor\angular-boostrap-ui\ui-bootstrap-custom-tpls-1.1.0.min.js" />
     <Content Include="App\Vendor\angular-resource\angular-resource.js" />
     <Content Include="App\Vendor\angular-resource\angular-resource.min.js" />
     <Content Include="App\Vendor\angular-resource\index.js" />
     <Content Include="App\Vendor\angular-route\angular-route.js" />
     <Content Include="App\Vendor\angular-route\angular-route.min.js" />
     <Content Include="App\Vendor\angular-route\index.js" />
+    <Content Include="App\Vendor\angular-sanitize\angular-sanitize.js" />
+    <Content Include="App\Vendor\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="App\Vendor\angular-sanitize\index.js" />
     <Content Include="App\Vendor\angular-ui-router\angular-ui-router.js" />
     <Content Include="App\Vendor\angular-ui-router\angular-ui-router.min.js" />
     <Content Include="App\Vendor\angular\angular-csp.css" />
@@ -124,6 +135,16 @@
     <Content Include="App\Vendor\bootstrap\bootstrap.css.map" />
     <Content Include="App\Vendor\font-awesome\font-awesome.css.map" />
     <Content Include="App\Vendor\jquery\jquery.min.map" />
+    <Content Include="App\Vendor\angular-animate\.bower.json" />
+    <Content Include="App\Vendor\angular-animate\angular-animate.min.js.map" />
+    <Content Include="App\Vendor\angular-animate\bower.json" />
+    <Content Include="App\Vendor\angular-animate\package.json" />
+    <Content Include="App\Vendor\angular-animate\README.md" />
+    <Content Include="App\Vendor\angular-sanitize\.bower.json" />
+    <Content Include="App\Vendor\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="App\Vendor\angular-sanitize\bower.json" />
+    <Content Include="App\Vendor\angular-sanitize\package.json" />
+    <Content Include="App\Vendor\angular-sanitize\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

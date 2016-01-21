@@ -1,10 +1,14 @@
 ﻿<div class="well well-lg">
     <div data-dc-lookup-dropdown
-         title="Drug Forms:"
-         items="df.drugFormList"
-         selected-item="vm.selectedDrugForm"
-         selected-items="vm.selectedDrugForms">
+         data-title="Drug Forms:"
+         data-items="df.drugFormList"
+         data-selected-item="df.selectedDrugForm"
+         data-selected-items="df.selectedDrugForms"
+         data-added-item="df.addDrugForm"
+         data-removed-item="df.removeDrugForm">
     </div>
+
+  
 </div>
 
 <div class="well well-lg">
@@ -17,11 +21,11 @@
                 <th>DisplayOrder</th>
             </tr>
         </thead>
-        <tr data-ng-repeat="drugForm in df.drugFormList">
-            <td>{{drugForm.Id}}</td>
-            <td>{{drugForm.Name}}</td>
-            <td>{{drugForm.Selected}}</td>
-            <td>{{drugForm.DisplayOrder}}</td>
+        <tr data-ng-repeat="drugForm in df.drugFormList | orderBy: 'DisplayOrder'">
+            <td>{{drugForm.id}}</td>
+            <td>{{drugForm.name}}</td>
+            <td>{{drugForm.selected}}</td>
+            <td>{{drugForm.displayOrder}}</td>
         </tr>
     </table>
 </div>

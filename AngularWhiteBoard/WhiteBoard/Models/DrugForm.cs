@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 
 namespace WhiteBoard.API.Models {
-    public class DrugForm {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public bool Selected { get; set; }
-        public int DisplayOrder { get; set; }
+    public class drugForm {
+        public int id { get; set; }
+        public string name { get; set; }
+        public bool selected { get; set; }
+        public int displayOrder { get; set; }
 
     }
 }

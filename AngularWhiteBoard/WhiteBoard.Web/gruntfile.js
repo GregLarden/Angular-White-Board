@@ -21,11 +21,14 @@
                 files: {
                     'jquery': 'jquery/dist',
                     'angular': 'angular',
+                    'angular-sanitize': 'angular-sanitize',
+                    'angular-animate': 'angular-animate',
                     'angular-resource': 'angular-resource',
                     'angular-route': 'angular-route',
-                    'angular-ui-router': 'angular-ui-router/release',
+                    'angular-ui-router': 'angular-ui-router/release',                    
                     'bootstrap': 'bootstrap/dist/css',
-                    'font-awesome/css': 'font-awesome/css' 
+                    'font-awesome/css': 'font-awesome/css',
+                    'font-awesome/fonts': 'font-awesome/fonts',
                     
                }  
             }
