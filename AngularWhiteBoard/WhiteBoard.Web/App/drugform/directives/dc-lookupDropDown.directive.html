@@ -1,4 +1,4 @@
-﻿<div class="table-responsive look-up-drop-down-width">
+﻿<div class="table-responsive ">
     <table class="table table-condensed">
         <tr>
             <td>
@@ -34,7 +34,7 @@
                         </td>
                         <td >
                             <span class="selected-item-label add-edit-action-label pull-left"  ng-click="lu.openActionOptions(item)">
-                                Add/Edit Actions {{item.actions.length}}
+                                ({{item.actions.length}}) Add/Edit Actions 
                                 <span ng-class="item.isActionPanelCollapsed ? 'fa fa-chevron-down' : 'fa fa-chevron-up'" />
                             </span>
                             <div class="pull-left" uib-collapse="item.isActionPanelCollapsed">
@@ -55,6 +55,7 @@
                                                             data-ng-click="lu.addActionToSelectedItem(item, item.selectedAction)"
                                                             ng-disabled="lu.isDisabled">
                                                         <span class="fa fa-plus"></span>
+
                                                     </button>
                                                 </span>
                                             </div>
@@ -98,46 +99,5 @@
 
 
 
-    <!--<td >
-               <span class="selected-item-label" style="cursor: pointer;" ng-click="lu.openActionOptions(item)">
-                   Actions {{item.actions.length}}
-                   <span ng-class="item.isActionPanelCollapsed ? 'fa fa-chevron-down' : 'fa fa-chevron-up'" />
-               </span>
-               <div uib-collapse="item.isActionPanelCollapsed">
-                       <table class="table table-condensed" style="width: 300px !important;">
-                           <tr>
-                               <td class="look-up-drop-down-td">
-                                   <div class="input-group">
-                                       <select class="form-control look-up-drop-down"
-                                               data-ng-options="(action.acronym !== undefined ? action.acronym : action.name) for action in item.actionList | orderBy:'displayOrder'"
-                                               data-ng-model="item.selectedAction"
-                                               data-ng-disabled="lu.disableSelect"
-                                               data-ng-change="lu.onActionChange(action)"
-                                               data-ng-init="lu.selectedItem.actions = item.actionList[0]"
-                                               ng-disabled="lu.isDisabled"></select>
-                                       <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
-                                           <button class="btn btn-info blue-tooltip"
-                                                   data-ng-disabled="lu.disableAddActionButton"
-                                                   data-ng-click="lu.addActionToSelectedItem(item, item.selectedAction)"
-                                                   ng-disabled="lu.isDisabled">
-                                               <span class="fa fa-plus"></span>
-                                           </button>
-                                       </span>
-                                   </div>
-                               </td>
-                           </tr>
-                           <tr ng-repeat="action in item.actions | orderBy: 'displayOrder'">
-                               <td>
-                                   <span class="selected-item-label">{{ (action.acronym !== undefined ? action.acronym : action.name) }} </span>
-                               </td>
-                               <td style="padding: 0 !important;">
-                                   <button class="btn btn-info pull-right" data-ng-click="lu.removeSelectedActionFromItem(item,action)"
-                                           ng-disabled="lu.isDisabled">
-                                       <span class="fa fa-minus"></span>
-                                   </button>
-                               </td>
-                           </tr>
-                       </table>
-               </div
-           </td>  >-->
+    
 </div>
