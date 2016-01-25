@@ -26,32 +26,18 @@
                 return _getDrugFormActions();
 
             })
-
-           // var promises = [_getDrugFormActions, _getDrugForms];
-            //return $q.all(promises);
-            //.then(onFullfilled, onRejected);
-
-            //function onFullfilled() {
-            //    console.log('Got Data Successfully!');
-            //}
-
-            //function onRejected(error) {
-            //    console.log(error);
-            //}
-
-
         }
 
 
         function addDrugForm(selectedItem, entityTypeName) {
-            var foundIndex = -1;
+            //var foundIndex = -1;
             
 
-            vm.drugFormList.forEach(function (i) {
-                if (i.id == selectedItem.id) {
-                    foundIndex = vm.drugFormList.indexOf(i);
-                }
-            }, foundIndex);
+            //vm.drugFormList.forEach(function (i) {
+            //    if (i.id == selectedItem.id) {
+            //        foundIndex = vm.drugFormList.indexOf(i);
+            //    }
+            //}, foundIndex);
 
            
         };
@@ -70,6 +56,9 @@
             });
         }
 
+        function addActionToDrugForm(selectedDrugForm, selectedAction) {
+            selectedDrugForm.actions.push(selectedAction);
+        }
 
         function _getDrugForms() {
             return DFDataService.getDrugFormData()

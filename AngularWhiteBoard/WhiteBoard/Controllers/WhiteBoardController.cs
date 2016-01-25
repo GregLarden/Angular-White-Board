@@ -11,7 +11,11 @@ namespace WhiteBoard.API.Models {
         [HttpGet]
         public IEnumerable<drugFormAction> GetDrugFormActions() {
             var actions = new List<drugFormAction>();
-            for(int idx = 0; idx < 20; idx++) {
+            actions.Add(
+                    new drugFormAction() { id = 0, name = "Select an action", displayOrder =1 }
+                    );
+
+            for(int idx = 1; idx < 20; idx++) {
                 actions.Add(
                     new drugFormAction() { id = idx, name = "Action" + idx.ToString(), displayOrder = idx * 10 }
                     );
@@ -23,6 +27,7 @@ namespace WhiteBoard.API.Models {
         [HttpGet]
         public IEnumerable<drugForm> GetDrugForms() {
             var drugForms = new List<drugForm> {
+            new drugForm {id=1, name="Select Drug From",      selected=false, actions=new List<drugFormAction>(), displayOrder=0},
             new drugForm {id=1, name="tablet",      selected=false, actions=new List<drugFormAction>(), displayOrder=130},
             new drugForm {id=2, name="Capsule",     selected=false, actions=new List<drugFormAction>(), displayOrder=20},
             new drugForm {id=3, name="Drop",        selected=false, actions=new List<drugFormAction>(), displayOrder=50},

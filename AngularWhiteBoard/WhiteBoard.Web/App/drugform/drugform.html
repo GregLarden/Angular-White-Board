@@ -6,6 +6,7 @@
          data-selected-item="df.selectedDrugForm"
          data-selected-items="df.selectedDrugForms"
          data-added-item="df.addDrugForm"
+         data-add-action-to-item="df.addActionToDrugForm"
          data-removed-item="df.removeDrugForm">
     </div>
 </div>
@@ -20,7 +21,7 @@
                 <th>DisplayOrder</th>
             </tr>
         </thead>
-        <tr data-ng-repeat="drugForm in df.drugFormList | orderBy: 'DisplayOrder'">
+        <tr data-ng-repeat="drugForm in df.drugFormList | orderBy: 'displayOrder'">
             <td>{{drugForm.id}}</td>
             <td>{{drugForm.name}}</td>
             <td>{{drugForm.selected}}</td>

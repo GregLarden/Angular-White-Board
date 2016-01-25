@@ -1,92 +1,143 @@
 ﻿<div class="table-responsive look-up-drop-down-width">
     <table class="table table-condensed">
         <tr>
-            <td class="look-up-drop-down-td">
-                <label class="default-label">{{title}}</label>
+            <td>
+                <span class="default-label">{{lu.title}}</span>
             </td>
         </tr>
         <tr>
-            <td class="look-up-drop-down-td">
+            <td>
                 <div class="input-group">
                     <select class="form-control look-up-drop-down"
-                            data-ng-options="(item.acronym !== undefined ? item.acronym : item.name) for item in items | orderBy:'displayOrder'"
-                            data-ng-model="selectedItem"
-                            data-ng-disabled="disableSelect"
-                            data-ng-change="onChange(item)"
-                            data-ng-init="selectedItem = items[0]"
-                            ng-disabled="isDisabled"></select>
-                    <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
+                            data-ng-options="(item.acronym !== undefined ? item.acronym : item.name) for item in lu.items | orderBy:'displayOrder'"
+                            data-ng-model="lu.selectedItem"
+                            data-ng-disabled="lu.disableSelect"
+                            data-ng-change="lu.onChange(item)"
+                            data-ng-init="lu.selectedItem = items[0]"
+                            ng-disabled="lu.isDisabled"></select>
                         <button class="btn btn-info blue-tooltip"
-                                data-ng-disabled="disableAddButton"
-                                data-ng-click="addSelectedItem()"
-                                ng-disabled="isDisabled">
+                                data-ng-disabled="lu.disableAddButton"
+                                data-ng-click="lu.addSelectedItem()"
+                                ng-disabled="lu.isDisabled">
                             <span class="fa fa-plus"></span>
                         </button>
-                    </span>
+                  
                 </div>
             </td>
         </tr>
         <tr>
-            <td style="padding:0 !important;">
-                <table class="table table-condensed ">
-                    <tr ng-repeat="item in selectedItems | orderBy: 'displayOrder'">
-                        <td>
-                            <span class="selected-item-label">{{ (item.acronym !== undefined ? item.acronym : item.name) }} </span>
+            <td>
+                <table class="table table-condensed look-up-drop-down-selected-items" style="padding:0 !important;">
+                    <tr ng-repeat="item in lu.selectedItems | orderBy: 'displayOrder'">
+                        <td class="selected-item-label" >
+                            {{ (item.acronym !== undefined ? item.acronym : item.name) }}
                         </td>
-                        <td>
-                            <span class="selected-item-label">
-                                Actions {{item.actions.length}}
-                                <span class="fa fa-chevron-down" style="cursor: pointer;" ng-click="isCollapsed = !isCollapsed"></span>
+                        <td >
+                            <span class="selected-item-label add-edit-action-label pull-left"  ng-click="lu.openActionOptions(item)">
+                                Add/Edit Actions {{item.actions.length}}
+                                <span ng-class="item.isActionPanelCollapsed ? 'fa fa-chevron-down' : 'fa fa-chevron-up'" />
                             </span>
-                            <div uib-collapse="isCollapsed">
-                                <div class="panel-collapse">
-                                    <table class="table table-condensed ">
-                                        <tr>
-                                            <td class="look-up-drop-down-td">
-                                                <div class="input-group">
-                                                    <select class="form-control look-up-drop-down"
-                                                            data-ng-options="(action.acronym !== undefined ? action.acronym : action.name) for action in actions | orderBy:'displayOrder'"
-                                                            data-ng-model="selectedItem"
-                                                            data-ng-disabled="disableSelect"
-                                                            data-ng-change="onChange(action)"
-                                                            data-ng-init="selectedItem = items[0]"
-                                                            ng-disabled="isDisabled"></select>
-                                                    <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
-                                                        <button class="btn btn-info blue-tooltip"
-                                                                data-ng-disabled="disableAddButton"
-                                                                data-ng-click="addSelectedItem()"
-                                                                ng-disabled="isDisabled">
-                                                            <span class=" fa fa-plus"></span>
+                            <div class="pull-left" uib-collapse="item.isActionPanelCollapsed">
+                                <table class="table table-condensed sub-look-up-drop-down pull-left" style="border:none !important;padding:0 !important;">
+                                    <tr>
+                                        <td style="border:none !important;padding:0 !important;">
+                                            <div class="input-group">
+                                                <select class="form-control" style="width:155px !important;"
+                                                        data-ng-options="(action.acronym !== undefined ? action.acronym : action.name) for action in item.actionList | orderBy:'displayOrder'"
+                                                        data-ng-model="item.selectedAction"
+                                                        data-ng-disabled="lu.disableSelect"
+                                                        data-ng-change="lu.onActionChange(action)"
+                                                        data-ng-init="lu.selectedItem.actions = item.actionList[0]"
+                                                        ng-disabled="lu.isDisabled"></select>
+                                                <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
+                                                    <button class="btn btn-info blue-tooltip"
+                                                            data-ng-disabled="lu.disableAddActionButton"
+                                                            data-ng-click="lu.addActionToSelectedItem(item, item.selectedAction)"
+                                                            ng-disabled="lu.isDisabled">
+                                                        <span class="fa fa-plus"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:none !important;padding:0 !important;">
+                                            <table class="table table-condensed" style="width:190px !important;border:none !important;padding:0 !important;">
+                                                <tr ng-repeat="action in item.actions | orderBy: 'displayOrder'">
+                                                    <td>
+                                                        {{ (action.acronym !== undefined ? action.acronym : action.name) }}
+                                                    </td>
+                                                    <td class="input-group-btn" style="padding-left: 0; padding-right: 0;">
+                                                        <button class="btn btn-info" data-ng-click="lu.removeSelectedActionFromItem(item,action)"
+                                                                ng-disabled="lu.isDisabled">
+                                                            <span class="fa fa-minus"></span>
                                                         </button>
-                                                    </span>
-                                                </div>
+                                                    </td>
+                                                </tr>
+                                                </table>
                                             </td>
-                                        </tr>
-                                        <tr ng-repeat="action in item.actions | orderBy: 'displayOrder'">
-                                            <td>
-                                                <span class="selected-item-label">{{ (action.acronym !== undefined ? action.acronym : action.name) }} </span>
-                                            </td>
-                                            <td style="padding: 0 !important;">
-                                                <button class="btn btn-info pull-right" data-ng-click="removeSelectedItem(action)"
-                                                        ng-disabled="isDisabled">
-                                                    <span class="fa fa-minus"></span>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
+                                    </tr>
+              
+                                </table>
                             </div>
-                        </td>
-                        <td style="padding: 0 !important;">
-                            <button class="btn btn-info pull-right" data-ng-click="removeSelectedItem(item)"
-                                    ng-disabled="isDisabled">
-                                <span class="fa fa-minus"></span>
-                            </button>
-                        </td>
+                        </td> 
+                        <td>
+                            <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
+                                <button class="btn btn-info pull-right" data-ng-click="lu.removeSelectedItem(item)"
+                                        ng-disabled="lu.isDisabled">
+                                    <span class="fa fa-minus"></span>
+                                </button>
+                            </span>
+                         </td>
                     </tr>
                 </table>
             </td>
-        </tr>
+        </tr>      
     </table>
-</div>
 
+
+
+
+    <!--<td >
+               <span class="selected-item-label" style="cursor: pointer;" ng-click="lu.openActionOptions(item)">
+                   Actions {{item.actions.length}}
+                   <span ng-class="item.isActionPanelCollapsed ? 'fa fa-chevron-down' : 'fa fa-chevron-up'" />
+               </span>
+               <div uib-collapse="item.isActionPanelCollapsed">
+                       <table class="table table-condensed" style="width: 300px !important;">
+                           <tr>
+                               <td class="look-up-drop-down-td">
+                                   <div class="input-group">
+                                       <select class="form-control look-up-drop-down"
+                                               data-ng-options="(action.acronym !== undefined ? action.acronym : action.name) for action in item.actionList | orderBy:'displayOrder'"
+                                               data-ng-model="item.selectedAction"
+                                               data-ng-disabled="lu.disableSelect"
+                                               data-ng-change="lu.onActionChange(action)"
+                                               data-ng-init="lu.selectedItem.actions = item.actionList[0]"
+                                               ng-disabled="lu.isDisabled"></select>
+                                       <span class="input-group-btn" style="padding-left: 0; padding-right: 0;">
+                                           <button class="btn btn-info blue-tooltip"
+                                                   data-ng-disabled="lu.disableAddActionButton"
+                                                   data-ng-click="lu.addActionToSelectedItem(item, item.selectedAction)"
+                                                   ng-disabled="lu.isDisabled">
+                                               <span class="fa fa-plus"></span>
+                                           </button>
+                                       </span>
+                                   </div>
+                               </td>
+                           </tr>
+                           <tr ng-repeat="action in item.actions | orderBy: 'displayOrder'">
+                               <td>
+                                   <span class="selected-item-label">{{ (action.acronym !== undefined ? action.acronym : action.name) }} </span>
+                               </td>
+                               <td style="padding: 0 !important;">
+                                   <button class="btn btn-info pull-right" data-ng-click="lu.removeSelectedActionFromItem(item,action)"
+                                           ng-disabled="lu.isDisabled">
+                                       <span class="fa fa-minus"></span>
+                                   </button>
+                               </td>
+                           </tr>
+                       </table>
+               </div
+           </td>  >-->
+</div>

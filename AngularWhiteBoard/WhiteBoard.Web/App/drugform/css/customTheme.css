@@ -20,7 +20,7 @@
     border-collapse: separate;
 }
 
-.default-label {
+.default-label {    
     vertical-align: middle;
     padding-right: 5px;
     -webkit-font-smoothing: antialiased;
@@ -1724,7 +1724,7 @@ a:hover .topnav-hover-color
 
 
 
-.look-up-drop-down-label {
+.look-up-drop-down-label {    
     vertical-align: middle;
     padding-right: 5px;
     padding-left:5px;
@@ -1737,6 +1737,7 @@ a:hover .topnav-hover-color
 }
 
 .look-up-drop-down-td {
+    width: 800px !important;    
     padding-top: 0  !important; 
     padding-left: 0  !important; 
     padding-right: 2px  !important; 
@@ -1744,28 +1745,40 @@ a:hover .topnav-hover-color
     border-top: 0  !important;
 }
 .look-up-drop-down-width {
-    width: 600px !important;
+     width: 800px !important; 
+    
 }
 .look-up-drop-down {
-    width: 260px !important;
+    width: 355px !important;
 }
+
+.sub-look-up-drop-down {
+    width: 192px !important;
+     
+}
+
 
 .look-up-drop-down-selected-items {
-    width: 295px !important;
+    width: 390px !important;
 }
 
+.add-edit-action-label {
+    cursor: pointer !important;
+    width:165px !important;
+}
 
-.selected-item-label {
+.selected-item-label {    
+    width:155px !important; 
     display: block;
-     min-height: 17px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  margin-bottom: 0;
+    min-height: 17px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 0;
     padding-left: 5px !important;
     -webkit-font-smoothing: antialiased;
     font-size: 14px !important;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     background: none;
     color: #666 !important;
 }
