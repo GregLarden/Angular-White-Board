@@ -25,11 +25,11 @@
                     'angular-animate': 'angular-animate',
                     'angular-resource': 'angular-resource',
                     'angular-route': 'angular-route',
-                    'angular-ui-router': 'angular-ui-router/release',                    
+                    'angular-ui-router': 'angular-ui-router/release',
+                    'angular-touch':'angular-touch',
                     'bootstrap': 'bootstrap/dist/css',
                     'font-awesome/css': 'font-awesome/css',
-                    'font-awesome/fonts': 'font-awesome/fonts',
-                    
+                    'font-awesome/fonts': 'font-awesome/fonts'
                }  
             }
         },

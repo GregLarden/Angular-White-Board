@@ -21,8 +21,8 @@
                 , "addedItem": "&addedItem"
                 , "removedItem": "&removedItem"
                 , "entityTypeName": "@"
-                , "isDisabled": "="
-
+                , "isDisabled": "="                          
+                , "enableActionSelection": "="
             }
             , controller: LookupDropDownController
             ,bindToController: true
@@ -36,10 +36,9 @@
         LookupDropDownController.$inject = ['$scope'];
         function LookupDropDownController($scope) {
             var vm = this;
-          //  vm.selectedAction = vm.actions[0];
+          
             vm.addSelectedItem = addSelectedItem;
-            vm.removeSelectedItem = removeSelectedItem;
-
+            vm.removeSelectedItem = removeSelectedItem;                     
             vm.addActionToSelectedItem = addActionToSelectedItem;
             vm.removeSelectedActionFromItem = removeSelectedActionFromItem;
 

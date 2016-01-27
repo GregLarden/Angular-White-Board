@@ -32,7 +32,7 @@
                         <td class="selected-item-label" >
                             {{ (item.acronym !== undefined ? item.acronym : item.name) }}
                         </td>
-                        <td >
+                        <td ng-if="lu.enableActionSelection" >
                             <span class="selected-item-label add-edit-action-label pull-left"  ng-click="lu.openActionOptions(item)">
                                 ({{item.actions.length}}) Add/Edit Actions 
                                 <span ng-class="item.isActionPanelCollapsed ? 'fa fa-chevron-down' : 'fa fa-chevron-up'" />

@@ -39,7 +39,8 @@
 
             function successCallBack(result) {
                 var drugForms = result.data
-                console.log(drugForms);
+                
+
                 return drugForms;
             }
 

@@ -13,7 +13,7 @@
        
         vm.addDrugForm = addDrugForm;
         vm.removeDrugForm = removeDrugForm;
-        
+           
         vm.drugFormList = [];
         vm.actionsList = [];
         vm.selectedDrugForm = {};
@@ -24,29 +24,15 @@
             return _getDrugForms()
                 .then(function () {
                 return _getDrugFormActions();
-
-            })
+            });
         }
 
 
-        function addDrugForm(selectedItem, entityTypeName) {
-            //var foundIndex = -1;
-            
-
-            //vm.drugFormList.forEach(function (i) {
-            //    if (i.id == selectedItem.id) {
-            //        foundIndex = vm.drugFormList.indexOf(i);
-            //    }
-            //}, foundIndex);
-
-           
-        };
+        function addDrugForm(selectedItem, entityTypeName) {};
 
         function removeDrugForm(selectedItem, entityTypeName) {
             var foundIndex = -1;
             var drugFormToDelete;
-
-          
 
             vm.drugFormList.forEach(function (i) {
                 if (i.id == selectedItem.id) {
@@ -54,6 +40,7 @@
                     drugFormToDelete = vm.drugFormList.splice(foundIndex,i);                    
                 }
             });
+
         }
 
         function addActionToDrugForm(selectedDrugForm, selectedAction) {
@@ -61,6 +48,7 @@
         }
 
         function _getDrugForms() {
+            
             return DFDataService.getDrugFormData()
             .then(onFullfilled, onRejected);
             function onFullfilled(drugForms) {
