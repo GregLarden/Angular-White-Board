@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.drugform')
+        .module('app.multiSelect')
         .run(appRun);
 
     appRun.$inject = ['routerHelper'];
@@ -13,15 +13,15 @@
 
     function getStates() {
         return [ {
-                   state: 'drugform',
+            state: 'multiSelect',
                    config: {
-                       url: '/drugform',
-                       templateUrl: 'app/drugform/drugform.html',
-                       controller: 'DrugFormController',
-                       controllerAs: 'df',
-                       title: 'Drug Form',
+                       url: '/',
+                       templateUrl: 'app/multiSelect/multiSelect.html',
+                       controller: 'MultiSelectController',
+                       controllerAs: 'vm',
+                       title: 'Multi-Select List Box',
                        settings: {
-                           nav: 3
+                           nav: 1
                        }
                    }
                }];

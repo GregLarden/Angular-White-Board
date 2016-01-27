@@ -10,6 +10,7 @@
     <link href="App/Vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <link href="App/drugform/css/customTheme.css" rel="stylesheet" />
+    <link href="App/multiSelect/css/style.css" rel="stylesheet" />
 
     <script type="text/javascript" src="App/Vendor/jquery/jquery.js"></script>
 
@@ -27,9 +28,17 @@
     <script type="text/javascript" src="App/core/core.module.js"></script>
 
     <script type="text/javascript" src="App/drugform/drugform.module.js"></script>
-    <script src="App/drugform/dataService/DFDataService.js"></script>
+    <script type="text/javascript" src="App/drugform/dataService/DFDataService.js"></script>
     <script type="text/javascript" src="App/drugform/drugform.controller.js"></script>
     <script type="text/javascript" src="App/drugform/drugform.route.js"></script>
+
+
+
+    <script type="text/javascript" src="App/multiSelect/multiSelect.module.js"></script>
+    <script type="text/javascript" src="App/multiSelect/dataService/MSDataService.js"></script>
+    <script type="text/javascript" src="App/multiSelect/multiSelect.controller.js"></script>
+    <script type="text/javascript" src="App/multiSelect/multiSelect.route.js"></script>
+    <script type="text/javascript" src="App/multiSelect/directives/multi-select-list-box.directive.js"></script>
 
     <script src="App/examples/examples.module.js"></script>
     <script src="App/examples/examples.controller.js"></script>
@@ -45,6 +54,7 @@
             <a class="navbar-brand" ui-sref="#">Angular White Board</a>
         </div>
         <ul class="nav navbar-nav">
+            <li><a ui-sref="multiSelect">MultiSelect</a></li>
             <li><a ui-sref="examples">Examples</a></li>
             <li><a ui-sref="drugform">DrugForm</a></li>
         </ul>

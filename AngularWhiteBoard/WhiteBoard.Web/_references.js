@@ -22,6 +22,13 @@
 /// <reference path="App/examples/examples.controller.js" />
 /// <reference path="App/examples/examples.module.js" />
 /// <reference path="App/examples/examples.route.js" />
+
+/// <reference path="App/multiSelect/dataService/MSDataService.js" />
+/// <reference path="App/multiSelect/multiSelect.controller.js" />
+/// <reference path="App/multiSelect/multiSelect.module.js" />
+/// <reference path="App/multiSelect/multiSelect.route.js" />
+/// <reference path="App/multiSelect/directives/multi-select-list-box.directive.js" />
+
 /// <reference path="App/helpers/router/router.module.js" />
 /// <reference path="App/helpers/router/routerHelperProvider.js" />
 /// <reference path="gruntfile.js" />

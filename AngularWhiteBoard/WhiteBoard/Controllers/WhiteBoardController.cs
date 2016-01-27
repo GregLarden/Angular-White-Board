@@ -62,5 +62,19 @@ namespace WhiteBoard.API.Models {
 
             }
         }
+
+        [HttpGet]
+        public IEnumerable<availableItem> GetAvailableItemsData() {
+
+            var availableItems = new List<availableItem>();
+
+            for(int idx = 1; idx < 20; idx++) {
+                availableItems.Add(
+                    new availableItem() { id = idx, name = "Item Option " + idx.ToString(), displayOrder = idx * 10 }
+                    );
+            }
+            return availableItems;
+
+        }
     }
 }
