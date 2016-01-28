@@ -39,13 +39,7 @@
     width: 150px !important;
 }
 
-.fixed-user-edit-panel {
-    min-width: 400px;   
-    margin-left: 20px; 
-    
-}
-
-.user-edit-name-label {
+.multi-list-select-label {
     min-width: 80px !important;
     
 }  

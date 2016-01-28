@@ -81,7 +81,7 @@
     <Content Include="App\examples\examples.controller.js" />
     <Content Include="App\examples\examples.route.js" />
     <Content Include="App\examples\examples.html" />
-    <Content Include="App\multiSelect\css\style.css" />
+    <Content Include="App\multiSelect\css\multi-list-select.css" />
     <Content Include="App\multiSelect\dataService\MSDataService.js" />
     <Content Include="App\multiSelect\directives\multi-select-list-box.directive.html" />
     <Content Include="App\multiSelect\directives\multi-select-list-box.directive.js" />
