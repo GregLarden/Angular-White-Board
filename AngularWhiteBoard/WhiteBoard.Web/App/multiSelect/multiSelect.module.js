@@ -1,4 +1,4 @@
 ﻿(function() {
     'use strict';
-    angular.module('app.multiSelect', ['app.core']);
+    angular.module('app.customMultiListSelect', ['app.core']);
 })();

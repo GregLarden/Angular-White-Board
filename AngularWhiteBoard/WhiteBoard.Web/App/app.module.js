@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';                                       
-    angular.module('app', ['app.core', 'app.examples', 'app.drugform','app.multiSelect']);
+    angular.module('app', ['app.core', 'app.examples', 'app.drugform', 'app.customMultiListSelect']);
 })();
 
 

@@ -83,8 +83,8 @@
     <Content Include="App\examples\examples.html" />
     <Content Include="App\multiSelect\css\multi-list-select.css" />
     <Content Include="App\multiSelect\dataService\MSDataService.js" />
-    <Content Include="App\multiSelect\directives\multi-select-list-box.directive.html" />
-    <Content Include="App\multiSelect\directives\multi-select-list-box.directive.js" />
+    <Content Include="App\multiSelect\directives\multi-list-select.directive.html" />
+    <Content Include="App\multiSelect\directives\multi-list-select.directive.js" />
     <Content Include="App\multiSelect\multiSelect.controller.js" />
     <Content Include="App\multiSelect\multiSelect.html" />
     <Content Include="App\multiSelect\multiSelect.module.js" />

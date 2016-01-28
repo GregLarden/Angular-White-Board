@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.multiSelect')
+        .module('app.customMultiListSelect')
         .run(appRun);
 
     appRun.$inject = ['routerHelper'];

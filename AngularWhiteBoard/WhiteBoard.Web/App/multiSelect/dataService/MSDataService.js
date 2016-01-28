@@ -3,7 +3,7 @@
     'use strict';
       //Sample Data Service
     angular
-        .module('app.multiSelect')
+        .module('app.customMultiListSelect')
         .factory('MSDataService', MSDataService);
 
     MSDataService.$inject = ['$http'];

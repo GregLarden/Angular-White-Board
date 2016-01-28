@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.multiSelect')
+        .module('app.customMultiListSelect')
         .controller('MultiSelectController', MultiSelectController);
 
     MultiSelectController.$inject = ['$q', '$scope', 'MSDataService'];

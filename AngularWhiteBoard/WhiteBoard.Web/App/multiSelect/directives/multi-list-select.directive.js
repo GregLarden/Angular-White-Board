@@ -9,9 +9,9 @@
     //     data-remove-items="vm.removeItems"
     //>
     //</div>
-    angular.module('app.multiSelect').directive('multiSelectListBox', multiSelectListBox);
+    angular.module('app.customMultiListSelect').directive('multiListSelect', multiListSelect);
 
-    function multiSelectListBox() {
+    function multiListSelect() {
         var directive = {
              scope: {
                  "title": "@"
@@ -23,17 +23,17 @@
                 , "removeItems": "&"
               
             }
-            , controller: MultiSelectListBoxController
+            , controller: MultiListSelectController
             , bindToController: true
             , controllerAs: 'ms'
             , restrict: 'A'
             , replace: true
-            , templateUrl: 'app/multiSelect/directives/multi-select-list-box.directive.html'
+            , templateUrl: 'app/multiSelect/directives/multi-list-select.directive.html'
         };
 
         
-        MultiSelectListBoxController.$inject = ['$scope','$timeout'];
-        function MultiSelectListBoxController($scope, $timeout) {
+        MultiListSelectController.$inject = ['$scope', '$timeout'];
+        function MultiListSelectController($scope, $timeout) {
             var vm = this;            
             vm.selected = {
                 availableItems: [],
