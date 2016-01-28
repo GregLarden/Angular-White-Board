@@ -8,13 +8,13 @@
                 class="form-control assigned-items-select pull-left" ng-options="ai as ai.name for ai in ms.assignedItems"></select>
     </div>
     <div class="select buttons">
-        <button class="btn mover left" ng-click="" title="Add selected"
+        <button class="btn mover left" ng-click="ms.addSelectedAvailableItems(ms.assignedItems,ms.selected)" title="Add selected"
                 data-ng-class="ms.selected.availableItems.length > 0 ? 'btn-success':'btn-disabled'"
                 ng-disabled="ms.selected.availableItems.length == 0">
 
             <i class="fa fa-arrow-left fa-2x"></i>
         </button>
-        <button class="btn mover right" ng-click="" title="Add selected"
+        <button class="btn mover right" ng-click="ms.removeSelectedAvailableItems(ms.assignedItems,ms.selected)" title="Remove Selected"
                 data-ng-class="ms.selected.assignedItems.length > 0 ? 'btn-success':'btn-disabled'"
                 ng-disabled="ue.selected.assignedItems.length == 0">
             <i class="fa fa-arrow-right fa-2x"></i>
@@ -23,9 +23,9 @@
     <div class="select pull-right">
         <label class="default-label user-edit-name-label pull-right" for="availableRoles">
             {{ms.availableItemsLabel}}
-            ({{ ms.availableItems.length }})
+            ({{ ms.availableItemList.length }})
         </label>    <br />
         <select id="availableRolesSelect" ng-model="ms.selected.availableItems" ng-click="ms.selected.assignedItems=[]" multiple
-                class="form-control available-items-select" ng-options="ai as ai.name for ai in ms.availableItems"></select>
+                class="form-control available-items-select" ng-options="ai as ai.name for ai in ms.availableItemList"></select>
     </div>
 </div>

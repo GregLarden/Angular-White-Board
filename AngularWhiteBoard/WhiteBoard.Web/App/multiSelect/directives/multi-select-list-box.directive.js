@@ -18,9 +18,10 @@
                 , "availableItemsLabel":"@"
                 , "assignedItemsLabel": "@"
                 , "availableItems": "="
-                , "assignedItems":"="
-                , "addItems": "&addItems"
-                , "removeItems": "&removeItems"
+                , "assignedItems": "="
+                , "addItems": "&"
+                , "removeItems": "&"
+              
             }
             , controller: MultiSelectListBoxController
             , bindToController: true
@@ -31,36 +32,71 @@
         };
 
         
-        MultiSelectListBoxController.$inject = ['$scope'];
-        function MultiSelectListBoxController($scope) {
-            var vm = this;
-
-            vm.addSelectedAvailableItems = addSelectedAvailableItems;
-            vm.removeSelectedAssignedItems = removeSelectedAssignedItems;
-            vm.toggle = toggle;
+        MultiSelectListBoxController.$inject = ['$scope','$timeout'];
+        function MultiSelectListBoxController($scope, $timeout) {
+            var vm = this;            
             vm.selected = {
                 availableItems: [],
                 assignedItems: []
             };
 
+            vm.availableItemList = [];
+            vm.addSelectedAvailableItems = addSelectedAvailableItems;
+            vm.removeSelectedAvailableItems = removeSelectedAvailableItems;
+
             activate();
 
             function activate() {
-                console.log(vm.assignedItems);
+                $timeout(function () {
+                    vm.availableItemList = vm.availableItems
+                    _refreshAvailableItemLists(vm.assignedItems, vm.selected);
+                }, 0,true);
             }
 
-            function toggle(selected) {
+
+            function addSelectedAvailableItems(assignedItems, selected) {
+                vm.addItems()(selected.availableItems);
+                _refreshAvailableItemLists(assignedItems, selected);
+            }
+
+            function removeSelectedAvailableItems(assignedItems, selected) {
+                vm.availableItemList = vm.availableItemList.concat(selected.assignedItems);
+                vm.removeItems()(selected.assignedItems);
+                _refreshAvailableItemLists(assignedItems, selected);
+            }
+
+            /* Filters out items in original that are also in toFilter. Compares by reference. */
+            function _filterAvailableItems(availableItems, assignedItems) {
+                var filtered = [];
+                if (assignedItems) {
+                    availableItems.forEach(function (availableItem) {
+                        var match = false;
+                        for (var i = 0; i < assignedItems.length; i++) {
+                            var assignedItemToFilter = assignedItems[i];
+                            if (assignedItemToFilter.id === availableItem.id) {
+                                match = true;
+                                break;
+                            }
+                        }
+                        if (!match) {
+                            filtered.push(availableItem);
+                        }
+                    });
+                } else {
+                    filtered = availableItems;
+                }
+                return filtered;
+            };
+
+            function _refreshAvailableItemLists(assignedItems, selected) {
                 
-                selected = [];
-            }
-           
-            function addSelectedAvailableItems(availableItems) {
+               vm.availableItemList.concat(selected.assignedItems);
+               vm.availableItemList = _filterAvailableItems(vm.availableItemList, assignedItems);
+                selected.available = [];
+                selected.current = [];
+            };
 
-            }
-
-            function removeSelectedAssignedItems(assignedItems) {
-
-            }
+            
 
         }
         return directive;

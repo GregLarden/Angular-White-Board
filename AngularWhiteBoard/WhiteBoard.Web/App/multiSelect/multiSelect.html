@@ -1,13 +1,18 @@
 ﻿<div class="well well-lg">
-            <div data-multi-select-list-box
-                 data-title="vm.title"
-                 data-assigned-items-label="Assigned Items"
-                 data-available-items-label="Available Items"
-                 data-available-items="vm.availableItems"
-                 data-assigned-items="vm.testObject.assignedItems"
-                 data-add-item="vm.addSelectedAvailableItems"
-                 data-remove-item="vm.removeSelectedAssignedItems"></div>
-        </div>
+    <div data-multi-select-list-box
+         data-title="vm.title"
+         data-assigned-items-label="Assigned Items"
+         data-available-items-label="Available Items"
+         data-available-items="vm.availableItems"
+         data-assigned-items="vm.testObject.assignedItems"
+         data-add-items="vm.addSelectedAvailableItems"
+         data-remove-items="vm.removeSelectedAssignedItems"></div>
 </div>
-
-
+<div class="well well-lg">
+    <table class="table">
+        <tr ng-repeat="item in vm.testObject.assignedItems">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+        </tr>
+    </table>
+</div>
