@@ -1,11 +1,11 @@
 ﻿<div class="multiSelect">
     <div class="select pull-left">
         <label class="default-label user-edit-name-label pull-left" for="multiSelectSelected">   
-            
+            {{ms.assignedItemsLabel}}
             ( {{ms.assignedItems.length}} )
         </label><br />
-        <select id="currentRoles" ng-model="ms.selected.assignedItems" multiple 
-                class="assigned-items-select pull-left" ng-options="ai as ai.name for ai in ms.assignedItems"></select>
+        <select id="currentRoles" ng-model="ms.selected.assignedItems" ng-click="ms.selected.availableItems=[]" multiple 
+                class="form-control assigned-items-select pull-left" ng-options="ai as ai.name for ai in ms.assignedItems"></select>
     </div>
     <div class="select buttons">
         <button class="btn mover left" ng-click="" title="Add selected"
@@ -22,9 +22,10 @@
     </div>
     <div class="select pull-right">
         <label class="default-label user-edit-name-label pull-right" for="availableRoles">
+            {{ms.availableItemsLabel}}
             ({{ ms.availableItems.length }})
         </label>    <br />
-        <select id="availableRolesSelect" ng-model="ue.selected.available" multiple
-                class="available-items-select" ng-options="ai as ai.name for ai in ms.availableItems"></select>
+        <select id="availableRolesSelect" ng-model="ms.selected.availableItems" ng-click="ms.selected.assignedItems=[]" multiple
+                class="form-control available-items-select" ng-options="ai as ai.name for ai in ms.availableItems"></select>
     </div>
 </div>

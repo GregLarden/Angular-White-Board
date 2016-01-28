@@ -15,6 +15,8 @@
         var directive = {
              scope: {
                  "title": "@"
+                , "availableItemsLabel":"@"
+                , "assignedItemsLabel": "@"
                 , "availableItems": "="
                 , "assignedItems":"="
                 , "addItems": "&addItems"
@@ -35,7 +37,7 @@
 
             vm.addSelectedAvailableItems = addSelectedAvailableItems;
             vm.removeSelectedAssignedItems = removeSelectedAssignedItems;
-
+            vm.toggle = toggle;
             vm.selected = {
                 availableItems: [],
                 assignedItems: []
@@ -47,6 +49,11 @@
                 console.log(vm.assignedItems);
             }
 
+            function toggle(selected) {
+                
+                selected = [];
+            }
+           
             function addSelectedAvailableItems(availableItems) {
 
             }
