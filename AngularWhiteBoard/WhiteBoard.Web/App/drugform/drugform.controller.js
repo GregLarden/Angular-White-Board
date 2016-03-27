@@ -5,9 +5,9 @@
         .module('app.drugform')
         .controller('DrugFormController', DrugFormController);
 
-    DrugFormController.$inject = ['$q', '$scope','DFDataService'];
+    DrugFormController.$inject = ['$q', '$scope','DFDataService','DTOptionsBuilder','DTColumnDefBuilder','DTDefaultOptions','DTColumnBuilder'];
 
-    function DrugFormController($q,$scope,DFDataService) {
+    function DrugFormController($q, $scope, DFDataService, DTOptionsBuilder, DTColumnDefBuilder, DTDefaultOptions, DTColumnBuilder) {
         var vm = this;
         vm.title = 'Drug Form Title';
        
@@ -26,6 +26,33 @@
                 return _getDrugFormActions();
             });
         }
+
+        vm.dtOptions = DTOptionsBuilder.fromFnPromise(_getDrugForms())
+            .withDOM('lfrti')
+            .withScroller()
+            .withOption('deferRender', true)
+            //// Do not forget to add the scorllY option!!!
+            .withOption('scrollY', 150);
+            //.withBootstrap()
+            
+
+        //vm.dtColumnDefs = [
+        //        DTColumnBuilder.newColumn('id', 'Id'),
+        //        DTColumnBuilder.newColumn('name', 'Name'),
+        //        DTColumnBuilder.newColumn('selected', 'Selected'),
+        //        DTColumnBuilder.newColumn('displayOrder', 'DisplayOrder'),
+        //];
+
+        vm.dtColumnDefs = [
+            DTColumnDefBuilder.newColumnDef(0),
+            DTColumnDefBuilder.newColumnDef(1),
+            DTColumnDefBuilder.newColumnDef(2),
+            DTColumnDefBuilder.newColumnDef(3)
+        ];
+
+        //$resource('data.json').query().$promise.then(function (persons) {
+        //    vm.persons = persons;
+        //});
 
 
         function addDrugForm(selectedItem, entityTypeName) {};
@@ -53,6 +80,7 @@
             .then(onFullfilled, onRejected);
             function onFullfilled(drugForms) {
                 vm.drugFormList = drugForms;
+              
             }
 
             function onRejected(error) {

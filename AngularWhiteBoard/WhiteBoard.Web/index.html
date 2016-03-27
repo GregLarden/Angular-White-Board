@@ -5,24 +5,36 @@
     <meta charset="utf-8" />
 
 
-    <link href="App/Vendor/bootstrap/bootstrap-theme.css" rel="stylesheet" />
-    <link href="App/Vendor/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="App/Vendor/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="App/Vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="App/Vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <link href="App/drugform/css/customTheme.css" rel="stylesheet" />
     <link href="App/multiSelect/css/multi-list-select.css" rel="stylesheet" />
 
 
+    
 
-    <script type="text/javascript" src="App/Vendor/jquery/jquery.js"></script>
-
+    <link href="App/Vendor/jquery/DataTables/Scroller-1.4.1/css/scroller.dataTables.min.css" rel="stylesheet" />
+    <link href="App/Vendor/jquery/DataTables/DataTables-1.10.11/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="App/Vendor/angular/angular-datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" />
+    
+    <script type="text/javascript"  src="App/Vendor/jquery/jquery.js"></script>
+    
+    <script type="text/javascript" src="App/Vendor/jquery/DataTables/datatables.js"></script>
+    <script type="text/javascript"  src="App/Vendor/jquery/DataTables/Scroller-1.4.1/js/dataTables.scroller.js"></script>
+    <script src="App/Vendor/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="App/Vendor/angular/angular.js"></script>
     <script type="text/javascript" src="App/Vendor/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="App/Vendor/angular-ui-router/angular-ui-router.js"></script>
     <script type="text/javascript" ssrc="App/Vendor/angular-animate/angular-animate.js"></script>
     <script type="text/javascript" src="App/Vendor/angular-sanitize/angular-sanitize.js"></script>
-
+    
     <script type="text/javascript" src="App/Vendor/angular-boostrap-ui/ui-bootstrap-custom-1.1.0.js"></script>
+
+    <script src="App/Vendor/angular/angular-datatables/angular-datatables.js"></script>
+    <script src="App/Vendor/angular/angular-datatables/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+    <script src="App/Vendor/angular/angular-datatables/plugins/scroller/angular-datatables.scroller.js"></script>
 
     <script src="App/helpers/router/router.module.js"></script>
     <script src="App/helpers/router/routerHelperProvider.js"></script>
@@ -56,9 +68,9 @@
             <a class="navbar-brand" ui-sref="#">Angular White Board</a>
         </div>
         <ul class="nav navbar-nav">
+            <li><a ui-sref="drugform">DrugForm</a></li>
             <li><a ui-sref="multiSelect">MultiSelect</a></li>
             <li><a ui-sref="examples">Examples</a></li>
-            <li><a ui-sref="drugform">DrugForm</a></li>
         </ul>
     </nav>
 

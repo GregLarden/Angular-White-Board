@@ -22,7 +22,7 @@
                        controllerAs: 'vm',                       
                        title: 'Examples',
                        settings: {
-                           nav:2
+                           nav:3
                        }
                    }
                }

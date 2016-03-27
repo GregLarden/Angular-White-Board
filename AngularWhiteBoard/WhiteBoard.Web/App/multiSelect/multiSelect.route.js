@@ -21,7 +21,7 @@
                        controllerAs: 'vm',
                        title: 'Multi-Select List Box',
                        settings: {
-                           nav: 1
+                           nav: 2
                        }
                    }
                }];

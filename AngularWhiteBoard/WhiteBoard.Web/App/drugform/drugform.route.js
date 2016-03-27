@@ -21,7 +21,7 @@
                        controllerAs: 'df',
                        title: 'Drug Form',
                        settings: {
-                           nav: 3
+                           nav: 1
                        }
                    }
                }];
