@@ -1,5 +1,5 @@
 ﻿<div class="well well-lg">    
-    <div data-dc-lookup-dropdown
+    <!--<div data-dc-lookup-dropdown
          data-title="Drug Forms:"
          data-items="df.drugFormList"
          data-actions="df.actionsList"
@@ -9,24 +9,37 @@
          data-add-action-to-item="df.addActionToDrugForm"
          data-removed-item="df.removeDrugForm"
          data-enable-action-selection="true">
-    </div>
+    </div>-->
+    ------------------| {{df.drugFormList.length}}
+     |--------------
 </div>
 
 <div class="well well-lg">
-    <table datatable="ng" dt-options="df.dtOptions" dt-column-defs="df.dtColumnDefs"  class="table table-striped table-bordered">
+    <!--<table datatable="" dt-options="df.dtOptions" dt-columns="df.dtColumnDefs" dt-instance="dt.dtInstance" class="row-border hover"></table>-->
+     
+    <table datatable="ng" dt-options="df.dtOptions" dt-column-defs="df.dtColumnDefs" 
+           dt-instance="df.dtInstance" class="table table-striped table-bordered">
         <thead>
             <tr>
-                <th>Id {{df.drugFormList.length}}</th>
-                <th>Name</th>
-                <th>Selected</th>
-                <th>DisplayOrder</th>
+                <th>id </th>
+                <th>name 
+                    <input type="text" data-ng-model="df.nameFilter" ng-click="$event.stopPropagation();" ng-change="df.customFilter();"/>
+                </th>
+                <th>selected 
+                    <select ng-click="$event.stopPropagation();" ng-model="df.selectedFilterValue" ng-change="df.customFilter();">
+                        <option value=""></option>
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                </th>
+                <th>displayorder</th>
             </tr>
         </thead>
-        <tr data-ng-repeat="drugForm in df.drugFormList">
-            <td>{{drugForm.id}}</td>
-            <td>{{drugForm.name}}</td>
-            <td>{{drugForm.selected}}</td>
-            <td>{{drugForm.displayOrder}}</td>
+        <tr data-ng-repeat="drugform in df.drugFormList">
+            <td>{{drugform.id}}</td>
+            <td>{{drugform.name}}</td>
+            <td>{{drugform.selected}}</td>
+            <td>{{drugform.displayorder}}</td>
         </tr>
     </table>
 
@@ -45,5 +58,5 @@
             <td>{{drugForm.selected}}</td>
             <td>{{drugForm.displayOrder}}</td>
         </tr>
-    </table>-->
+    </table>     -->
 </div>

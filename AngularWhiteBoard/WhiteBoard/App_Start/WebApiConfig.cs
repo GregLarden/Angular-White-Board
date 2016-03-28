@@ -11,8 +11,8 @@ namespace WhiteBoard {
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{action}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "api/{controller}/{action}/{Start}/{End}",
+                defaults: new { Start = RouteParameter.Optional, End = RouteParameter.Optional }
             );
         }
     }

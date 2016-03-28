@@ -32,9 +32,9 @@
             }
         }
 
-        function getDrugFormData() {
+        function getDrugFormData(start, length) {
             
-            return $http.get('http://localhost/WhiteBoard.API/api/whiteboard/GetDrugForms')
+            return $http.get('http://localhost/WhiteBoard.API/api/whiteboard/GetDrugForms/' + start + '/' + length)
             .then(successCallBack, errorCallBack);
 
             function successCallBack(result) {
