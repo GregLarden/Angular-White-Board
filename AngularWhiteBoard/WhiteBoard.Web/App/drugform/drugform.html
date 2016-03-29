@@ -1,5 +1,5 @@
 ﻿<div class="well well-lg">    
-    <div data-dc-lookup-dropdown
+    <!--<div data-dc-lookup-dropdown
          data-title="Drug Forms:"
          data-items="df.drugFormList"
          data-actions="df.actionsList"
@@ -9,20 +9,22 @@
          data-add-action-to-item="df.addActionToDrugForm"
          data-removed-item="df.removeDrugForm"
          data-enable-action-selection="true">
-    </div>
+    </div>-->
+
+    Selected Drug Form: {{df.selectedDrugForm.name}}
 </div>
 
 <div class="well well-lg">
-    <table datatable="ng" dt-options="df.dtOptions" dt-column-defs="df.dtColumnDefs"  class="table table-striped table-bordered">
+    <table datatable="ng" dt-options="df.dtOptions" dt-column-defs="df.dtColumnDefs" dt-instance="df.dtInstanceCallback" class="table table-striped table-bordered">
         <thead>
             <tr>
-                <th>Id {{df.drugFormList.length}}</th>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Selected</th>
                 <th>DisplayOrder</th>
             </tr>
         </thead>
-        <tr data-ng-repeat="drugForm in df.drugFormList">
+        <tr data-ng-repeat="drugForm in df.drugFormList" > <!--data-ng-click="df.selectRow(drugForm)">-->
             <td>{{drugForm.id}}</td>
             <td>{{drugForm.name}}</td>
             <td>{{drugForm.selected}}</td>
