@@ -68,6 +68,8 @@
   <ItemGroup>
     <Content Include="App\drugform\css\customTheme.css" />
     <Content Include="App\drugform\dataService\DFDataService.js" />
+    <Content Include="App\drugform\directives\dc-filter.directive.html" />
+    <Content Include="App\drugform\directives\dc-filter.directive.js" />
     <Content Include="App\drugform\directives\dc-lookupDropDown.directive.html" />
     <Content Include="App\drugform\directives\dc-lookupDropDown.directive.js" />
     <Content Include="App\helpers\router\router.module.js" />

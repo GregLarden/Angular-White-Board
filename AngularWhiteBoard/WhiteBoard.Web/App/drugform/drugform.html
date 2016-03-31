@@ -10,7 +10,8 @@
          data-removed-item="df.removeDrugForm"
          data-enable-action-selection="true">
     </div>-->
-
+    <!--<div dc-filter></div>--> 
+    
     Selected Drug Form: {{df.selectedDrugForm.name}}
 </div>
 
@@ -19,12 +20,19 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Name 
+                    <div ng-click="df.filterClicked = !f.filterClicked;$event.stopPropagation();">
+                        <div class="fa fa-filter fa-lg pull-right " ng-class="df.filterClicked ? 'green' : ''">
+                            <div ng-if="df.filterClicked" class="customFilter">
+                                Test
+                            </div>
+                        </div>
+                    </div></th>
                 <th>Selected</th>
                 <th>DisplayOrder</th>
             </tr>
         </thead>
-        <tr data-ng-repeat="drugForm in df.drugFormList" > <!--data-ng-click="df.selectRow(drugForm)">-->
+        <tr data-ng-repeat="drugForm in df.drugFormList">
             <td>{{drugForm.id}}</td>
             <td>{{drugForm.name}}</td>
             <td>{{drugForm.selected}}</td>

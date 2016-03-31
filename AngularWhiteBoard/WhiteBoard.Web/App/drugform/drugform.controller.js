@@ -19,7 +19,7 @@
         vm.selectedDrugForm = {};
         vm.selectedDrugForms = [];
         vm.selectRow = selectRow;
-
+        vm.filterClicked=false;
         activate();
 
         function activate() {
@@ -29,11 +29,21 @@
                 });
         }
 
+
+        vm.dtColumnDefs = [
+        DTColumnDefBuilder.newColumnDef(0),
+        DTColumnDefBuilder.newColumnDef(1),
+        DTColumnDefBuilder.newColumnDef(2),
+        DTColumnDefBuilder.newColumnDef(3)
+        ];
+
         vm.dtInstanceCallback = dtInstanceCallback;
         vm.dtInstance = {};
+
+        //$timeout(function () {
         vm.dtOptions = DTOptionsBuilder.fromFnPromise(_getDrugForms())
             //.withDOM('lfrti')
-            .withDOM('frtip')
+            .withDOM('rtip')
              .withSelect({
                  style: 'single'
              })
@@ -41,16 +51,18 @@
             .withOption('deferRender', true)
             //// Do not forget to add the scorllY option!!!
             .withOption('scrollY', 150)
-            .withOption('rowId', 'id');
-        // .withOption('rowCallback', rowCallback);
-        //.withBootstrap()
+            .withOption('rowId', 'id')
+            .withOption('retrieve', true);
+             // .withOption('rowCallback', rowCallback);
+            //.withBootstrap()
+      //  }, 10);
         var previousIndex = undefined;
         var currentIndex = undefined;
 
 
         function dtInstanceCallback(dtInstance) {
             vm.dtInstance = dtInstance;
-
+           
             vm.dtInstance.DataTable.on('deselect.dt', function (e, dt, type, indexes) {
                 //console.log('deselect.dt: type:' + type + ' - RowId:' + indexes[0]);
                 if (type === 'row') {
@@ -73,51 +85,12 @@
                     }
                 }
             });
+        
         }
 
-        //$scope.$watch('vm.dtInstance', function () {
-        //    vm.dtInstance.on('deselect', function (e, dt, type, indexes) {
-        //        if (type === 'rows') {
-        //            var data = table.rows(indexes).data().pluck('id');
-
-        //            // do something with the ID of the deselected items
-        //        }
-        //    });
-        //});
+    
 
 
-        //function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-        //    // Unbind first in order to avoid any duplicate handler (see https://github.com/l-lin/angular-datatables/issues/87)
-        //    $('td', nRow).unbind('click');
-        //    $('td', nRow).bind('click', function () {
-        //        $scope.$apply(function () {
-        //            //if (previouslySelectedIndex == undefined) {
-        //                previouslySelectedIndex = iDisplayIndex;
-        //            //}
-        //            var test = nRow;
-
-
-        //            //if (previouslySelectedIndex != iDisplayIndex) {
-        //            //    previouslySelectedIndex = iDisplayIndex;
-
-        //            //} else {
-        //            //    vm.dtInstance.DataTable.row(':eq(' + previouslySelectedIndex + ')', { page: 'current' }).select();
-        //            //}
-
-        //         //   vm.selectRow(aData);
-
-        //        });
-        //    });
-        //    return nRow;
-        //}
-
-
-        vm.dtColumnDefs = [
-            DTColumnDefBuilder.newColumnDef(0),
-            DTColumnDefBuilder.newColumnDef(1),
-            DTColumnDefBuilder.newColumnDef(2),
-            DTColumnDefBuilder.newColumnDef(3)
-        ];
 
         vm.selectedDrugForm = {};
 

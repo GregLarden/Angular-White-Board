@@ -1779,3 +1779,13 @@ a:hover .topnav-hover-color
     background: none;
     color: #666 !important;
 }
+
+.customFilter {
+  position: absolute;  
+  left: 50%;
+  width: 200px;    
+  height:200px;
+  background-color:yellow;  
+  color:black;
+}
+        
