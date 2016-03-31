@@ -149,6 +149,31 @@
     <Content Include="App\Vendor\font-awesome\css\font-awesome.css" />
     <Content Include="App\Vendor\font-awesome\css\font-awesome.min.css" />
     <Content Include="App\Vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\buttons.bootstrap.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\buttons.bootstrap.min.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\buttons.dataTables.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\buttons.dataTables.min.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\buttons.foundation.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\buttons.foundation.min.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\buttons.jqueryui.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\buttons.jqueryui.min.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.bootstrap.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.bootstrap.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.colVis.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.colVis.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.flash.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.flash.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.foundation.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.foundation.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.html5.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.html5.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.jqueryui.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.jqueryui.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.print.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\buttons.print.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\dataTables.buttons.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\js\dataTables.buttons.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\swf\flashExport.swf" />
     <Content Include="App\Vendor\jquery\DataTables\DataTables-1.10.11\css\dataTables.bootstrap.css" />
     <Content Include="App\Vendor\jquery\DataTables\DataTables-1.10.11\css\dataTables.bootstrap.min.css" />
     <Content Include="App\Vendor\jquery\DataTables\DataTables-1.10.11\css\dataTables.foundation.css" />
@@ -185,6 +210,16 @@
     <Content Include="App\Vendor\jquery\DataTables\Scroller-1.4.1\css\scroller.jqueryui.min.css" />
     <Content Include="App\Vendor\jquery\DataTables\Scroller-1.4.1\js\dataTables.scroller.js" />
     <Content Include="App\Vendor\jquery\DataTables\Scroller-1.4.1\js\dataTables.scroller.min.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\css\select.bootstrap.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\css\select.bootstrap.min.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\css\select.dataTables.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\css\select.dataTables.min.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\css\select.foundation.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\css\select.foundation.min.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\css\select.jqueryui.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\css\select.jqueryui.min.css" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\js\dataTables.select.js" />
+    <Content Include="App\Vendor\jquery\DataTables\Select-1.1.2\js\dataTables.select.min.js" />
     <Content Include="App\Vendor\jquery\jquery.js" />
     <Content Include="App\Vendor\jquery\jquery.min.js" />
     <Content Include="packages.config" />
@@ -230,6 +265,8 @@
     <Content Include="App\Vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="App\Vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="App\Vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\common.scss" />
+    <Content Include="App\Vendor\jquery\DataTables\Buttons-1.1.2\css\mixins.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -22,8 +22,7 @@
             .then(successCallBack, errorCallBack);
 
             function successCallBack(result) {
-                var actions = result.data
-                console.log(actions);
+                var actions = result.data;
                 return actions;
             }
 
@@ -38,9 +37,7 @@
             .then(successCallBack, errorCallBack);
 
             function successCallBack(result) {
-                var drugForms = result.data
-                
-
+                var drugForms = result.data;
                 return drugForms;
             }
 
